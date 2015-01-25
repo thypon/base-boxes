@@ -155,6 +155,6 @@
   "post-processors": [{
     "type": "vagrant",
     "keep_input_artifact": true,
-    "output": "box/{{.Provider}}/android-builder-{{user `cm`}}{{user `cm_version`}}-{{user `version`}}.box"
+    "output": "box/android-builder-{{user `cm`}}{{user `cm_version`}}-{{user `version`}}.box"
   }]
 }

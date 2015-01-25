@@ -77,7 +77,7 @@
     "post-processors": [
         {
             "type": "vagrant",
-            "output": "archassault_{{.Provider}}.box",
+            "output": "box/archassault_{{.Provider}}.box",
             "keep_input_artifact": true
         }
     ]

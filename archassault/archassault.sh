@@ -10,4 +10,5 @@ pacman-key -r CC1D2606 && pacman-key --lsign-key CC1D2606
 
 pacman -Syyu --noconfirm archassault-keyring
 printf "y\n\n" | pacman -S gcc-libs-multilib
-pacman -S --noconfirm vim dtach git htop tig base-devel xorg-xauth libxtst 
+pacman -S --noconfirm vim dtach git htop tig base-devel xorg-xauth xorg-xhost libxtst 
+echo "X11Forwarding yes" >> /etc/ssh/sshd_config

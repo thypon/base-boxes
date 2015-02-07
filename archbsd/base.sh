@@ -54,5 +54,5 @@ root ALL=(ALL) ALL
 %wheel ALL=(ALL) NOPASSWD: ALL
 EOF
 
-echo vagrant | pw user add -n vagrant -G wheel -c "Vagrant User" -m -h 0
+echo vagrant | pw user add -n vagrant -G wheel -c "Vagrant User" -m -s /usr/bin/bash
 ENDCHROOT

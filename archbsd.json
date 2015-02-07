@@ -1,0 +1,32 @@
+{
+  "builders": [
+    {
+      "type": "qemu",
+      "iso_url": "ArchBSD-x86_64-20140904.iso",
+      "iso_checksum": "a72d2e3e7a64467fc5646d1f65e7009c",
+      "iso_checksum_type": "md5",
+      "ssh_username": "vagrant",
+      "ssh_password": "vagrant",
+      "ssh_wait_timeout": "1000s",
+      "shutdown_command": "echo 'shutdown -p now' | sudo su -",
+      "boot_wait": "10s",
+      "http_directory": "archbsd",
+      "disk_size": 61440,
+      "boot_command": [
+        "<enter>",
+        "<wait10>",
+        "root<enter>",
+        "dhclient vtnet0<enter>",
+        "fetch -o /tmp/setup http://{{ .HTTPIP }}:{{ .HTTPPort }}/base.sh<enter><wait><wait>",
+        "chmod +x /tmp/setup && /tmp/setup && reboot<enter>"
+      ]
+    }
+  ],
+  "post-processors": [
+    {
+      "output": "./archbsd-out/archbsd.box",
+      "type": "vagrant",
+      "keep_input_artifact": true
+    }
+  ]
+}
